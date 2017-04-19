@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import axios from 'axios';
-
+import AlbumDetail from 'albums/src/components/AlbumDetail'
   class AlbumList extends Component {
     state = { albums: [] }; //set initial state
     componentWillMount() {
@@ -13,14 +13,16 @@ import axios from 'axios';
         }));
     }
     renderAlbums() { //this is called insud the render
-      return this.state.albums.map( album => <Text>{album.title}</Text>); //.map is an array helper fat arrow gets single album
+      return this.state.albums.map( album => //.map is an array helper fat arrow gets single album
+        <AlbumDetail key={album.title} albumData={album}/>
+      );
     }
 
     render() {
         // console.warn(this.state);
       return (
           <View>
-            <Text>{this.renderAlbums()}</Text> 
+            {this.renderAlbums()}
           </View>
 
       );
