@@ -6,7 +6,7 @@ import Header from 'albums/src/components/header'
 // create the Component
   const App = () => (
 
-      <Header />
+      <Header headerText={'Sexy Records'}/> 
     );
 
 
