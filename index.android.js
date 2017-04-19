@@ -1,11 +1,11 @@
 
 //import library to assist with creation of Component
-
 import React from 'react';
-import { Text, AppRegistry } from 'react-native';
+import { AppRegistry } from 'react-native';
+import Header from 'albums/src/components/header'
 // create the Component
   const App = () => (
-      <Text>This is in a text tag</Text>
+      <Header />
     );
 
 // send it to the device     albums is the name of the app and App is our Component  "const App"
