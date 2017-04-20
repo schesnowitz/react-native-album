@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import axios from 'axios';
 import AlbumDetail from 'albums/src/components/AlbumDetail';
 
@@ -16,16 +16,16 @@ import AlbumDetail from 'albums/src/components/AlbumDetail';
     }
     renderAlbums() { //this is called insud the render
       return this.state.albums.map( album => //.map is an array helper fat arrow gets single album
-        <AlbumDetail key={album.title} albumData={album}/>
+        <AlbumDetail key={album.title} albumData={album}/> // albumData avail in AlbumDetail
       );
     }
 
     render() {
         // console.warn(this.state);
       return (
-          <View>
+          <ScrollView>
             {this.renderAlbums()}
-          </View>
+          </ScrollView>
 
       );
     }
